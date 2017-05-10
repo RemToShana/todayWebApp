@@ -30,7 +30,8 @@
     "redux": "^3.6.0",
     "redux-logger": "^3.0.1",
     "redux-thunk": "^2.2.0",
-    "uuid": "^3.0.1"
+    "uuid": "^3.0.1",
+    "wordcount": "^1.1.1"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
