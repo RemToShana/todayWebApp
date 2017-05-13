@@ -54,7 +54,7 @@
 .user-class{
   color: #FD4D3A;
   font-size: 3rem;
-  transition: 0.2s ease;  
+  transition: 0.2s ease;
 }
 .user-class:hover{
   transform: scale(1.2);
@@ -85,6 +85,11 @@
 .success_create{
   width: 200px;
   margin: 20px auto 0 auto;
+}
+.success_create_account{
+  width: 500px;
+  margin: 20px auto 0 auto;
+  text-align: center;
 }
 .music_play_button > i{
   transition: 0.2s ease;

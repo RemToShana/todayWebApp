@@ -272,7 +272,8 @@ const initRegistorState = {
     registor_username_value: '',
     registor_password_value: '',
     username_danger: '',
-    password_danger: ''
+    password_danger: '',
+    success_create_account: false
 };
 
 export function Registor(state = initRegistorState, action) {
@@ -300,6 +301,11 @@ export function Registor(state = initRegistorState, action) {
         case '@REGISTOR/RESET':
             return {
               ...initRegistorState
+            };
+        case '@REGISTOR/SUCCESS':
+            return {
+              ...state,
+              success_create_account: action.success_create_account
             };
         default:
             return state;

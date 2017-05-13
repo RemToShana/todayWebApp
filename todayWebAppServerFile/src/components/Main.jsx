@@ -24,6 +24,8 @@ import Create from 'components/Create.jsx';
 import Article from 'components/Article.jsx';
 import Login from 'components/Login.jsx';
 import Registor from 'components/Registor.jsx';
+import Setting from 'components/Setting.jsx';
+
 
 // import {setSearchText} from 'states/post-actions.js';
 // import {toggleNavbar} from 'states/main-actions.js';
@@ -69,6 +71,9 @@ class Main extends React.Component {
                     )}/>
                     <Route exact path="/registor" render={() => (
                         <Registor />
+                    )}/>
+                    <Route exact path="/setting" render={() => (
+                        <Setting />
                     )}/>
                     {/* <div className='footer'>
                         Today

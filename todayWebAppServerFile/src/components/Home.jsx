@@ -54,7 +54,7 @@ class Home extends React.Component {
     }
 
     render() {
-        const {Home_button_color, success_create, tooltipOpen, music_state, music_stage} = this.props;
+        const {Home_button_color, success_create, tooltipOpen, music_state, music_stage, registor_username_value, success_create_account} = this.props;
         return (
           <div>
             <div className="button">
@@ -103,12 +103,30 @@ class Home extends React.Component {
                 <i className={`fa fa-${music_state} ${music_state}-button-class`} id = "play_music"></i>
                 <audio id="audio" src={require('../resource/1.mp3')} hidden="true"></audio>
               </div>
-              <NavLink tag={Link} to='/registor'>
+              <NavLink tag={Link} to='/setting'>
                 <i className="fa fa-user user-class"></i>
               </NavLink>
             </div>{
                 success_create &&
                 <Alert color='warning' className='success_create'>Successfully created</Alert>
+            }{
+                success_create_account &&
+                <Alert color='warning' className='success_create_account'>
+                  Wecome!
+                  <br/>
+                  {registor_username_value}
+                  <br/>
+                  Your account has been successfully created
+                  <br/>
+                  Click the button on your lefthand side
+                  <br/>
+                  to create an event
+                  <br/>
+                  And click the button on your righthand side
+                  <br/>
+                  to set up your settings
+                  <br/>
+                </Alert>
             }
             <Tooltip placement="bottom" isOpen={tooltipOpen} autohide={false} target="play_music" toggle={this.handleTooltipToggle}>
               <i className={`fa fa-user music-class-${music_stage[0]}`} onClick={() => this.handle_play_button_click()}></i>&nbsp;&nbsp;
@@ -116,7 +134,7 @@ class Home extends React.Component {
               <i className={`fa fa-user music-class-${music_stage[2]}`} onClick={() => this.handle_play_button_click()}></i>&nbsp;&nbsp;
               <i className={`fa fa-user music-class-${music_stage[3]}`} onClick={() => this.handle_play_button_click()}></i>&nbsp;&nbsp;
               <i className={`fa fa-user music-class-${music_stage[4]}`} onClick={() => this.handle_play_button_click()}></i>&nbsp;&nbsp;
-            </Tooltip>         
+            </Tooltip>
           </div>
         );
     }
@@ -126,6 +144,7 @@ export default connect((state) => {
     return {
       ...state.ListPosts,
       ...state.Home,
-      ...state.Music
+      ...state.Music,
+      ...state.Registor
     };
 })(Home);

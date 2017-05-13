@@ -350,6 +350,12 @@ export function reset_registor() {
         type: '@REGISTOR/RESET'
     };
 };
+export function createAccountSuccess(input) {
+    return {
+        type: '@REGISTOR/SUCCESS',
+        success_create_account: input
+    };
+};
 /*account api*/
 export function findAccount(id, username, password){
   return (dispatch, getState) => {

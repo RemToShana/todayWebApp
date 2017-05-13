@@ -13,7 +13,8 @@ import {
 } from 'react-router-dom';
 import {
   registor_username, registor_password, createAccount,
-  set_password_danger, set_username_danger, reset_registor
+  set_password_danger, set_username_danger, reset_registor,
+  createAccountSuccess
 } from 'states/post-actions.js';
 import './Registor.css';
 
@@ -52,6 +53,7 @@ class Registor extends React.Component {
           return;
         }
         this.props.dispatch(createAccount(username, password));
+        this.props.dispatch(createAccountSuccess(true));
     }
 
     render() {
