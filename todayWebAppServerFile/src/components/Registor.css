@@ -1,0 +1,29 @@
+.create_account{
+  color: white;
+}
+.create_account_button{
+  margin: 30px auto 0 auto;
+  text-align: center;
+}
+.create_account_button > a{
+  width: 100%;
+  border-radius: 10px;
+}
+.login_title > h1{
+  width: 100%;
+}
+.login_title{
+  margin: 30px auto 100px auto;
+  width: 30%;
+}
+.back_to_login{
+  color: gray;
+}
+.back_to_login > a{
+  color: gray;
+  display: inline !important;
+}
+.fix{
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+}

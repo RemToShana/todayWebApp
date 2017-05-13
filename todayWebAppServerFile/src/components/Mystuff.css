@@ -1,0 +1,82 @@
+.card-container{
+  width: 600px;
+  margin: 0 auto;
+  height: auto;
+}
+.top-card{
+  height: 100%;
+}
+.top-card > a{
+  width: 10%;
+  font-size: 30px;
+  color: #E8E8E8;
+}
+.large_back{
+
+}
+.middle-card{
+  opacity:0.5;
+  height: 10%;
+}
+.bottom-card{
+  opacity:0.2;
+  height: 10%;
+}
+.nontransparent{
+
+}
+.transparent{
+  display: none !important;
+}
+.bigger{
+  font-size: 40px;
+}
+.larger{
+  font-size: 60px;
+  color: white !important;
+  text-align: center;
+}
+.mystuff_deadline{
+  font-size: 40px;
+  color: #FD4D3A !important;
+}
+.done_button{
+  margin: 100px auto 50px auto;
+  text-align: center;
+}
+.done_button > a{
+  border-color: white;
+  border-radius: 30px;
+  width: 300px;
+}
+.done{
+  font-size: 40px;
+}
+.not_yet{
+  font-size: 20px;
+  color: white !important;
+}
+.last_time{
+  color: #FD4D3A;
+  font-size: 2rem;
+}
+.nextPost{
+  font-size: 3rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.can_shift{
+  color: #FD4D3A;
+}
+.cannot_shift{
+
+}
+.mystuff_button{
+  text-align: center;
+}
+.mystuff_button > a{
+  border-radius:100%;
+  box-shadow: 0px 2px 1px #888888;
+  margin: 1%;
+}

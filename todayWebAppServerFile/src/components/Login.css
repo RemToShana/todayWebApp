@@ -1,0 +1,55 @@
+.login_title > img{
+  width: 100%;
+}
+.login_title{
+  margin: 30px auto 100px auto;
+  width: 30%;
+}
+.sign_in{
+  color: white;
+}
+.sign_in_button{
+  margin: 30px auto 0 auto;
+  text-align: center;
+}
+.sign_in_button > a{
+  width: 150px;
+  border-radius: 30px;
+}
+.or_container{
+  text-align: center;
+  margin: 50px auto 50px auto;
+}
+.or{
+  color: gray;
+}
+.account{
+  height: 45px;
+}
+.fb_button{
+  margin: 0 auto 150px auto;
+  text-align: center;
+}
+.fb_button > Button{
+  width: 300px;
+  border-radius: 30px;
+}
+.no_account{
+  color: gray;
+}
+.no_account_container{
+  text-align: center;
+  margin: 0 auto 20px auto;
+}
+.registor_button{
+  margin: 0 auto 30px auto;
+  text-align: center;
+}
+.registor_button > a{
+  width: 200px;
+  border-radius: 30px;
+  border: solid #FD4D3A 2px;
+}
+.registor{
+  color: #FD4D3A;
+}
