@@ -161,7 +161,7 @@ import cookie from 'react-cookie';
 // const postBaseUrl = 'http://weathermood-staging.us-west-2.elasticbeanstalk.com/api';
 
 // Production server URL
-const postBaseUrl = 'http://todayApp.us-west-2.elasticbeanstalk.com/api';
+const postBaseUrl = 'http://todayapp.us-west-1.elasticbeanstalk.com/api';
 
 export function findAccount(id = "", username = "", password = ""){
   let url = `${postBaseUrl}/accounts`;
