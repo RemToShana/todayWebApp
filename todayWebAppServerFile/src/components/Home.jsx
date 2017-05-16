@@ -10,7 +10,12 @@ import {
 import {
     Link
 } from 'react-router-dom'
-import {setHomeButtonColor, setHomeTime, listPosts, toggleTooltip, setTooltipToggle, setMusicState} from 'states/post-actions.js';
+import {
+  setHomeButtonColor, setHomeTime, listPosts,
+  toggleTooltip, setTooltipToggle, setMusicState,
+  createAccountSuccess, set_vedio_genres_state_from_api,
+  set_music_prefer_state_from_api
+} from 'states/post-actions.js';
 import './Home.css';
 
 
@@ -29,6 +34,8 @@ class Home extends React.Component {
     componentWillMount() {
         this.props.dispatch(listPosts(0));
         this.props.dispatch(setHomeTime(0));
+        this.props.dispatch(set_vedio_genres_state_from_api());
+        this.props.dispatch(set_music_prefer_state_from_api());
     }
 
     handle_play_button_click(){
@@ -50,6 +57,7 @@ class Home extends React.Component {
     }
 
     jump_button_click(){
+      this.props.dispatch(createAccountSuccess(false));
       this.props.dispatch(setHomeButtonColor());
     }
 
@@ -109,7 +117,8 @@ class Home extends React.Component {
             </div>{
                 success_create &&
                 <Alert color='warning' className='success_create'>Successfully created</Alert>
-            }{
+            }
+            {
                 success_create_account &&
                 <Alert color='warning' className='success_create_account'>
                   Wecome!
@@ -145,6 +154,8 @@ export default connect((state) => {
       ...state.ListPosts,
       ...state.Home,
       ...state.Music,
-      ...state.Registor
+      ...state.Registor,
+      ...state.Vedio_genres,
+      ...state.Music_prefer
     };
 })(Home);

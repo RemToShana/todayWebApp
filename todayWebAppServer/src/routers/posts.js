@@ -73,4 +73,70 @@ router.get('/accounts', function(req, res) {
     });
 });
 
+//setHomeLocation
+router.put('/accounts/home/:lat/:lon/:user_id', function(req, res) {
+    const {lat, lon, user_id} = req.params;
+    if (!lat || !lon || !user_id) {
+        const err = new Error('accounts id and lat lon are required');
+        err.status = 400;
+        throw err;
+    }
+    postModel.setHomeLocation(lat, lon, user_id).then(accounts => {
+        res.json(accounts);
+    })
+});
+
+//setOfficeLocation
+router.put('/accounts/office/:lat/:lon/:user_id', function(req, res) {
+    const {lat, lon, user_id} = req.params;
+    if (!lat || !lon || !user_id) {
+        const err = new Error('accounts id and lat lon are required');
+        err.status = 400;
+        throw err;
+    }
+    postModel.setOfficeLocation(lat, lon, user_id).then(accounts => {
+        res.json(accounts);
+    })
+});
+
+//sentVedioGenres
+router.post('/accounts/genres', function(req, res) {
+    const {genres, user_id} = req.body;
+    if (!genres || !user_id) {
+        const err = new Error('user_id and genres are required');
+        err.status = 400;
+        throw err;
+    }
+    postModel.sentVedioGenres(genres, user_id).then(accounts => {
+        res.json(accounts);
+    });
+});
+
+//getVedioGenres
+router.get('/accounts/genres', function(req, res) {
+    postModel.getVedioGenres(req.query.user_id).then(genres => {
+        res.json(genres);
+    });
+});
+
+//sentMusicPrefer
+router.post('/accounts/prefer', function(req, res) {
+    const {prefer, user_id} = req.body;
+    if (!prefer || !user_id) {
+        const err = new Error('user_id and prefer are required');
+        err.status = 400;
+        throw err;
+    }
+    postModel.sentMusicPrefer(prefer, user_id).then(accounts => {
+        res.json(accounts);
+    });
+});
+
+//getMusicPrfer
+router.get('/accounts/prefer', function(req, res) {
+    postModel.getMusicPrefer(req.query.user_id).then(prefer => {
+        res.json(prefer);
+    });
+});
+
 module.exports = router;

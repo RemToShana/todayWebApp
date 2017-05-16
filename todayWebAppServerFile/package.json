@@ -21,17 +21,18 @@
     "react": "^15.5.3",
     "react-addons-css-transition-group": "^15.4.2",
     "react-addons-transition-group": "^15.4.2",
+    "react-cookie": "^1.0.5",
     "react-dom": "^15.5.3",
     "react-mixin": "^3.0.5",
     "react-redux": "^5.0.4",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.0.0",
+    "react-svg": "^2.1.19",
     "reactstrap": "^4.5.0",
     "redux": "^3.6.0",
     "redux-logger": "^3.0.1",
     "redux-thunk": "^2.2.0",
-    "uuid": "^3.0.1",
-    "react-cookie": "^1.0.5"
+    "uuid": "^3.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",

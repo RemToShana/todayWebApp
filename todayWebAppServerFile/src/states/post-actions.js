@@ -5,7 +5,15 @@ import {
     donePost as donePostsFromApi,
     createAccount as createAccountFromApi,
     findAccount as findAccountFromApi,
-    setId as setIdFromApi
+    setId as setIdFromApi,
+    setHomeLocation as setHomeLocationFromApi,
+    setOfficeLocation as setOfficeLocationFromApi,
+    getHomeLocationByAddress as getHomeLocationByAddressFromApi,
+    getOfficeLocationByAddress as getOfficeLocationByAddressFromApi,
+    sentVedioGenres as sentVedioGenresToApi,
+    getVedioGenres as getVedioGenresFromApi,
+    sentMusicPrefer as sentMusicPreferToApi,
+    getMusicPrefer as getMusicPreferFromApi
 } from 'api/posts.js';
 import cookie from 'react-cookie';
 
@@ -356,6 +364,12 @@ export function createAccountSuccess(input) {
         success_create_account: input
     };
 };
+export function account_exist(input) {
+    return {
+        type: '@REGISTOR/ACCOUNT_EXISTS',
+        account_exist: input
+    };
+};
 /*account api*/
 export function findAccount(id, username, password){
   return (dispatch, getState) => {
@@ -376,7 +390,11 @@ export function findAccount(id, username, password){
 export function createAccount(username, password) {
     return (dispatch, getState) => {
         return createAccountFromApi(username, password).then( newAccount => {
-            dispatch(findAccount(newAccount.id, newAccount.username, newAccount.password));
+            if(newAccount){
+              dispatch(findAccount(newAccount.id, newAccount.username, newAccount.password));
+            }else{
+              dispatch(account_exist(true));
+            }
         }).catch(err => {
             console.error('Error creating account', err);
         });
@@ -388,5 +406,107 @@ export function set_id_state(id) {
     return {
         type: '@MAIN/SET_ID',
         id: id
+    };
+};
+
+/*place-setting*/
+export function input_home_address(input) {
+    return {
+        type: '@PLACE_SETTING/SET_HOME_ADDRESS',
+        home_address: input
+    };
+};
+export function input_office_address(input) {
+    return {
+        type: '@PLACE_SETTING/SET_OFFICE_ADDRESS',
+        office_address: input
+    };
+};
+export function set_home_location(lat, lon) {
+  return (dispatch, getState) => {
+      return setHomeLocationFromApi(lat, lon).then( newAccount => {
+      }).catch(err => {
+          console.error('Error creating account', err);
+      });
+  };
+};
+export function set_office_location(lat, lon) {
+  return (dispatch, getState) => {
+      return setOfficeLocationFromApi(lat, lon).then( newAccount => {
+      }).catch(err => {
+          console.error('Error creating account', err);
+      });
+  };
+};
+export function set_office_location_by_address(office_address) {
+    return (dispatch, getState) => {
+        return getOfficeLocationByAddressFromApi(office_address).then(location => {
+          const {lat, lon} = location;
+          dispatch(set_office_location(lat, lon));
+        }).catch(err => {
+            console.error('Error getting location', err);
+        });
+    };
+};
+export function set_home_location_by_address(home_address) {
+    return (dispatch, getState) => {
+        return getHomeLocationByAddressFromApi(home_address).then(location => {
+          const {lat, lon} = location;
+          dispatch(set_home_location(lat, lon));
+        }).catch(err => {
+            console.error('Error getting location', err);
+        });
+    };
+};
+
+/*video genres*/
+export function set_vedio_genres(input) {
+  return {
+      type: '@VEDIO_GENRES/SET',
+      genres: input
+  };
+};
+
+export function sent_vedio_genres_to_api(genres) {
+    return (dispatch, getState) => {
+        return sentVedioGenresToApi(genres).then(location => {
+        }).catch(err => {
+            console.error('Error senttig genres', err);
+        });
+    };
+};
+export function set_vedio_genres_state_from_api() {
+    return (dispatch, getState) => {
+        return getVedioGenresFromApi().then(genres => {
+          dispatch(set_vedio_genres(genres));
+        }).catch(err => {
+            console.error('Error senttig genres', err);
+        });
+    };
+};
+
+/*music prefer*/
+export function set_music_prefer(input) {
+  return {
+      type: '@MUSIC_PREFER/SET',
+      prefer: input
+  };
+};
+
+export function sent_music_prefer_to_api(prefer) {
+    return (dispatch, getState) => {
+        return sentMusicPreferToApi(prefer).then(location => {
+        }).catch(err => {
+            console.error('Error senttig prefer', err);
+        });
+    };
+};
+export function set_music_prefer_state_from_api() {
+    return (dispatch, getState) => {
+        return getMusicPreferFromApi().then(prefer => {
+          dispatch(set_music_prefer(prefer));
+        }).catch(err => {
+            console.error('Error senttig prefer', err);
+        });
     };
 };

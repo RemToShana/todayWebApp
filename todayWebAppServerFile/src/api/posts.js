@@ -248,3 +248,123 @@ export function resetPostTime(id, time) {
       return res.data;
   });
 }
+
+export function sentVedioGenres(genres, user_id = cookie.load('id')){
+  let url = `${postBaseUrl}/accounts/genres`;
+  console.log(`Making POST request to: ${url}`);
+
+  return axios.post(url,{
+    genres, user_id
+  }).then(function(res) {
+      if (res.status !== 200)
+          throw new Error(`Unexpected response code: ${res.status}`);
+
+      return res.data;
+  });
+}
+export function getVedioGenres(user_id = cookie.load('id')){
+  let url = `${postBaseUrl}/accounts/genres?user_id=${user_id}`;
+  console.log(`Making POST request to: ${url}`);
+
+  return axios.get(url).then(function(res) {
+      if (res.status !== 200)
+          throw new Error(`Unexpected response code: ${res.status}`);
+
+      return res.data;
+  });
+}
+
+export function sentMusicPrefer(prefer, user_id = cookie.load('id')){
+  let url = `${postBaseUrl}/accounts/prefer`;
+  console.log(`Making POST request to: ${url}`);
+
+  return axios.post(url,{
+    prefer, user_id
+  }).then(function(res) {
+      if (res.status !== 200)
+          throw new Error(`Unexpected response code: ${res.status}`);
+
+      return res.data;
+  });
+}
+export function getMusicPrefer(user_id = cookie.load('id')){
+  let url = `${postBaseUrl}/accounts/prefer?user_id=${user_id}`;
+  console.log(`Making POST request to: ${url}`);
+
+  return axios.get(url).then(function(res) {
+      if (res.status !== 200)
+          throw new Error(`Unexpected response code: ${res.status}`);
+
+      return res.data;
+  });
+}
+
+
+export function setOfficeLocation(lat, lon, user_id = cookie.load('id')){
+  let url = `${postBaseUrl}/accounts/office/${lat}/${lon}/${user_id}`;
+  console.log(`Making PUT request to: ${url}`);
+
+  return axios.put(url).then(function(res) {
+      if (res.status !== 200)
+          throw new Error(`Unexpected response code: ${res.status}`);
+
+      return res.data;
+  });
+}
+export function setHomeLocation(lat, lon, user_id = cookie.load('id')){
+  let url = `${postBaseUrl}/accounts/home/${lat}/${lon}/${user_id}`;
+  console.log(`Making PUT request to: ${url}`);
+
+  return axios.put(url).then(function(res) {
+      if (res.status !== 200)
+          throw new Error(`Unexpected response code: ${res.status}`);
+
+      return res.data;
+  });
+}
+/*google map api*/
+const google_key = 'AIzaSyBRM2oOS3EW6eMH8UAXjo61MbwU5I6PPjI';
+const googleBaseUrl = `https://maps.googleapis.com/maps/api/geocode/json?key=${google_key}`;
+
+export function getOfficeLocationByAddress(office_address){
+  var url = `${googleBaseUrl}&address=${office_address}`;
+
+  console.log(`Making request to: ${url}`);
+
+  return axios.get(url).then(function(res) {
+      if (res.data.result && res.data.status)
+          throw new Error(res.data.status);
+
+      return {
+        lat: res.data.results[0].geometry.location.lat,
+        lon: res.data.results[0].geometry.location.lng
+      };
+  }).catch(function(err) {
+      if (axios.isCancel(err)) {
+          console.error(err.message, err);
+      } else {
+          throw err;
+      }
+  });
+}
+
+export function getHomeLocationByAddress(home_address){
+  var url = `${googleBaseUrl}&address=${home_address}`;
+
+  console.log(`Making request to: ${url}`);
+
+  return axios.get(url).then(function(res) {
+      if (res.data.result && res.data.status)
+          throw new Error(res.data.status);
+      return {
+          lat: res.data.results[0].geometry.location.lat,
+          lon: res.data.results[0].geometry.location.lng
+      };
+  }).catch(function(err) {
+      if (axios.isCancel(err)) {
+          console.error(err.message, err);
+      } else {
+          throw err;
+      }
+  });
+}

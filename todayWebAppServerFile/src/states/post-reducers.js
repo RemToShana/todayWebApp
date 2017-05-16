@@ -273,7 +273,8 @@ const initRegistorState = {
     registor_password_value: '',
     username_danger: '',
     password_danger: '',
-    success_create_account: false
+    success_create_account: false,
+    account_exist: false
 };
 
 export function Registor(state = initRegistorState, action) {
@@ -307,6 +308,11 @@ export function Registor(state = initRegistorState, action) {
               ...state,
               success_create_account: action.success_create_account
             };
+        case '@REGISTOR/ACCOUNT_EXISTS':
+            return {
+              ...state,
+              account_exist: action.account_exist
+            };
         default:
             return state;
     }
@@ -321,6 +327,94 @@ export function Main_state(state = initMainState, action) {
         case '@MAIN/SET_ID':
             return {
                 id: action.id
+            };
+        default:
+            return state;
+    }
+}
+
+const initPlaceSettingState = {
+  home_address: '',
+  office_address: ''
+}
+
+export function Place_setting(state = initPlaceSettingState, action) {
+    switch (action.type) {
+        case '@PLACE_SETTING/SET_HOME_ADDRESS':
+            return {
+                home_address: action.home_address
+            };
+        case '@PLACE_SETTING/SET_OFFICE_ADDRESS':
+            return {
+                office_address: action.office_address
+            };
+        default:
+            return state;
+    }
+}
+
+const initVedioSettingState = {
+  genres: [
+    {
+      topic: "TheEllenShow",
+      able: false
+    },
+    {
+      topic: "Vox",
+      able: false
+    },
+    {
+      topic: "National Geographic",
+      able: false
+    },
+    {
+      topic: "Material Design",
+      able: false
+    },
+    {
+      topic: "WIRED",
+      able: false
+    }
+  ]
+}
+
+export function Vedio_genres(state = initVedioSettingState, action) {
+    switch (action.type) {
+        case '@VEDIO_GENRES/SET':
+            return {
+                genres: action.genres
+            };
+        default:
+            return state;
+    }
+}
+
+const initMusicSettingState = {
+  prefer: [
+    {
+      topic: "Jazz",
+      able: false
+    },
+    {
+      topic: "Pop",
+      able: false
+    },
+    {
+      topic: "R&B",
+      able: false
+    },
+    {
+      topic: "Classical",
+      able: false
+    }
+  ]
+}
+
+export function Music_prefer(state = initMusicSettingState, action) {
+    switch (action.type) {
+        case '@MUSIC_PREFER/SET':
+            return {
+                prefer: action.prefer
             };
         default:
             return state;

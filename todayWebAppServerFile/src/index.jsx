@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore, combineReducers, compose, applyMiddleware} from 'redux';
 import thunkMiddleware from 'redux-thunk';
-// import loggerMiddleware from 'redux-logger';
 import {Provider} from 'react-redux';
 import Main from 'components/Main.jsx';
-// import {unit, weather, weatherForm, forecast} from 'states/weather-reducers.js';
-import {ListPosts, Home, Create, Mystuff, Music, Login, Registor, Main_state} from 'states/post-reducers.js';
-// import {todoForm, todo} from 'states/todo-reducers.js';
-// import {main} from 'states/main-reducers.js';
+import {
+  ListPosts, Home, Create, Mystuff, Music,
+  Login, Registor, Main_state, Place_setting,
+  Vedio_genres, Music_prefer
+} from 'states/post-reducers.js';
+
 
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -22,7 +23,10 @@ window.onload = function() {
         Music,
         Login,
         Registor,
-        Main_state
+        Main_state,
+        Place_setting,
+        Vedio_genres,
+        Music_prefer
     }), composeEnhancers(applyMiddleware(thunkMiddleware)));
 
     ReactDOM.render(

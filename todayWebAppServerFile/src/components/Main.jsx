@@ -25,8 +25,9 @@ import Article from 'components/Article.jsx';
 import Login from 'components/Login.jsx';
 import Registor from 'components/Registor.jsx';
 import Setting from 'components/Setting.jsx';
-
-
+import PlaceSetting from 'components/PlaceSetting.jsx';
+import VedioGenres from 'components/VedioGenres.jsx';
+import MusicPreferences from 'components/MusicPreferences.jsx';
 // import {setSearchText} from 'states/post-actions.js';
 // import {toggleNavbar} from 'states/main-actions.js';
 
@@ -75,6 +76,15 @@ class Main extends React.Component {
                     <Route exact path="/setting" render={() => (
                         <Setting />
                     )}/>
+                    <Route exact path="/placeSetting" render={() => (
+                        <PlaceSetting />
+                    )}/>
+                    <Route exact path="/vedioGenres" render={() => (
+                        <VedioGenres />
+                    )}/>
+                    <Route exact path="/musicPreferences" render={() => (
+                        <MusicPreferences />
+                    )}/>
                     {/* <div className='footer'>
                         Today
                     </div> */}
@@ -87,5 +97,5 @@ class Main extends React.Component {
 
 export default connect(state => ({
     ...state.ListPosts,
-    ...state.Main_state
+    ...state.Main_state,
 }))(Main);

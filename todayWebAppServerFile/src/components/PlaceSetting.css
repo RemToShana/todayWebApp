@@ -1,0 +1,50 @@
+.home_office{
+  font-size: 25px;
+  color: gray !important;
+  text-align: center;
+  margin: 0 auto 5% auto;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+.use_current_location{
+  color: #FD4D3A;
+  text-align: center;
+  margin-bottom: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.use_current_location > Button{
+  border: 0 !important;
+  /*color: #FD4D3A !important;*/
+  color: black;
+}
+
+.setting-home{
+  font-size: 30px;
+  margin-bottom: 5%;
+}
+.place_or_container{
+  text-align: center;
+  margin: 20px auto 20px auto;
+}
+.place_or{
+  color: gray;
+}
+.setting-place-container > Input{
+  height: 40px;
+}
+.place-large{
+  font-size: 25px;
+  margin: auto 0;
+}
+.button-save{
+  text-align: center;
+  font-size: 25px;
+}
+.place-button{
+  margin-bottom: 20px;
+}
+.place-button > a{
+  height: 50px;
+}

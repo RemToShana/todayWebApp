@@ -1,0 +1,27 @@
+.circle-li {
+    list-style-type: circle;
+}
+.disc-li{
+    list-style-type: disc;
+    color: #FD4D3A;
+}
+.article-list{
+  font-size: 50px;
+  color: gray;
+  margin-bottom: 100px;
+}
+/*li > Button{
+  border: 0 !important;
+  font-size: 30px !important;
+  color: gray !important;
+}*/
+.li-button{
+  border: 0 !important;
+  font-size: 30px !important;
+  color: gray !important;
+}
+.li-button-clicked{
+  border: 0 !important;
+  font-size: 30px !important;
+  color: #FD4D3A !important;
+}

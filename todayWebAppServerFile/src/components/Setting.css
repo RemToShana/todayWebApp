@@ -1,3 +1,15 @@
+.setting-top{
+  margin: 0 auto 0px auto;
+  width: 600px;
+}
+.setting-top > a{
+  font-size: 30px;
+  font-weight: bolder;
+  color: #E8E8E8;
+  text-align: left;
+  position: absolute;
+  border-color: transparent;
+}
 .username{
   color: #FD4D3A;
   font-size: 60px;
@@ -8,6 +20,17 @@
 .setting-top{
   margin-top: 30px;
   margin-bottom: 60px;
+  display: flex;
+}
+.right-top{
+  margin: 0 0 0 auto;
+}
+.right-top > a{
+  color: gray !important;
+  transition: 0.2s ease;
+}
+.right-top > a:hover{
+  transform: scale(1.2);
 }
 .setting-item-container{
   color: gray;
@@ -16,6 +39,14 @@
 .flex-display{
   display: flex;
   justify-content: space-between;
+}
+.flex-display > a{
+  color: gray !important;
+  transition: 0.2s ease;
+}
+.flex-display > a:hover{
+  color: #FD4D3A !important;
+  transform: scale(1.2);
 }
 .centered{
   margin: auto 0;

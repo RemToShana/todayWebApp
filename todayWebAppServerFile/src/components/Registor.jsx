@@ -32,6 +32,9 @@ class Registor extends React.Component {
         this.handlePasswordInputChange = this.handlePasswordInputChange.bind(this);
         this.handle_registor_click = this.handle_registor_click.bind(this);
     }
+    componentWillMount() {
+        this.props.dispatch(reset_registor());
+    }
     handleUserInputChange(e) {
         this.props.dispatch(registor_username(e.target.value));
         if(e.target.value){

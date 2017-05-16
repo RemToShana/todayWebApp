@@ -86,7 +86,7 @@ class Mystuff extends React.Component {
              <CardBlock>
                 <CardTitle className="bigger"><i className="fa fa-times"></i> No post here.</CardTitle>
                 <CardText className="larger">Go add some posts.</CardText>
-                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
              </CardBlock>
             </Card>
           </div>

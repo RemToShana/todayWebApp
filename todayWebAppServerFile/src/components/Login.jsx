@@ -22,7 +22,7 @@ import {
   login_username, login_password,
   findAccount, login_failure,
   reset_login, set_login_password_danger,
-  set_login_username_danger
+  set_login_username_danger, account_exist
 } from 'states/post-actions.js';
 class Login extends React.Component {
     static propTypes = {
@@ -41,16 +41,19 @@ class Login extends React.Component {
     }
     componentWillMount() {
         this.props.dispatch(reset_login());
+        this.props.dispatch(account_exist(false));
     }
 
     handleUserInputChange(e) {
         this.props.dispatch(login_username(e.target.value));
         this.props.dispatch(login_failure(false));
+        this.props.dispatch(account_exist(false));
         this.props.dispatch(set_login_username_danger(""));
     }
     handlePasswordInputChange(e) {
         this.props.dispatch(login_password(e.target.value));
         this.props.dispatch(login_failure(false));
+        this.props.dispatch(account_exist(false));
         this.props.dispatch(set_login_password_danger(""));
     }
     handleSignIn(login_username_value, login_password_value){
@@ -66,7 +69,7 @@ class Login extends React.Component {
     }
 
     render() {
-      const {login_username_value, login_password_value, login_failure, username_danger, password_danger} = this.props;
+      const {login_username_value, login_password_value, login_failure, username_danger, password_danger, account_exist} = this.props;
       const login_danger = login_failure ? "has-danger" : "";
       return (
           <div>
@@ -90,6 +93,9 @@ class Login extends React.Component {
                 </Button>{
                   login_failure &&
                   <Alert color='danger' className='success_create'>{`No such account >w<`} <br/> Please check it!!</Alert>
+                }{
+                  account_exist &&
+                  <Alert color='danger' className='success_create'>{`account already exist >w<`} <br/> Please change it!!</Alert>
                 }
               </div>
               <div className="or_container">
@@ -124,6 +130,7 @@ class Login extends React.Component {
 
 export default connect((state) => {
   return {
-    ...state.Login
+    ...state.Login,
+    ...state.Registor
   };
 })(Login);

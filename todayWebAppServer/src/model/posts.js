@@ -125,8 +125,28 @@ function createAccount(username, password) {
     const newAccount = {
         id: uuid(),
         username: username,
-        password: password
+        password: password,
+        home: [],
+        office: [],
+        genres: [
+          {topic: "TheEllenShow",able: false},
+          {topic: "Vox",able: false},
+          {topic: "National Geographic",able: false},
+          {topic: "Material Design",able: false},
+          {topic: "WIRED",able: false}
+        ],
+        prefer: [
+          {topic: "Jazz",able: false},
+          {topic: "Pop",able: false},
+          {topic: "R&B",able: false},
+          {topic: "Classical",able: false}
+        ]
     };
+    findAccount('', username, password).then(accounts => {
+        if(accounts.length !== 0){
+          resolve(false);
+        }
+    });
     findAccount().then(accounts => {
         accounts = [
             newAccount,
@@ -141,11 +161,119 @@ function createAccount(username, password) {
   });
 }
 
+function setHomeLocation(lat, lon, user_id) {
+  return new Promise((resolve, reject) => {
+    findAccount().then(accounts => {
+        accounts = accounts.map(a => {
+            if(a.id == user_id){
+              a.home = [lat, lon];
+            }
+            return a;
+        });
+        fs.writeFile('data-accounts.json', JSON.stringify(accounts), err => {
+            if (err) reject(err);
+
+            resolve(accounts);
+        });
+    });
+  });
+}
+
+function setOfficeLocation(lat, lon, user_id) {
+  return new Promise((resolve, reject) => {
+    findAccount().then(accounts => {
+        accounts = accounts.map(a => {
+            if(a.id == user_id){
+              a.office = [lat, lon];
+            }
+            return a;
+        });
+        fs.writeFile('data-accounts.json', JSON.stringify(accounts), err => {
+            if (err) reject(err);
+
+            resolve(accounts);
+        });
+    });
+  });
+}
+
+function sentVedioGenres(genres, user_id) {
+  return new Promise((resolve, reject) => {
+    findAccount().then(accounts => {
+        accounts = accounts.map(a => {
+            if(a.id == user_id){
+              a.genres = genres;
+            }
+            return a;
+        });
+        fs.writeFile('data-accounts.json', JSON.stringify(accounts), err => {
+            if (err) reject(err);
+
+            resolve(accounts);
+        });
+    });
+  });
+}
+
+function getVedioGenres(user_id) {
+  return new Promise((resolve, reject) => {
+    var temp_genres = [];
+    findAccount().then(accounts => {
+        accounts = accounts.map(a => {
+            if(a.id == user_id){
+              temp_genres = a.genres;
+            }
+            return a;
+        });
+    resolve(temp_genres);
+    });
+  });
+}
+
+function sentMusicPrefer(prefer, user_id) {
+  return new Promise((resolve, reject) => {
+    findAccount().then(accounts => {
+        accounts = accounts.map(a => {
+            if(a.id == user_id){
+              a.prefer = prefer;
+            }
+            return a;
+        });
+        fs.writeFile('data-accounts.json', JSON.stringify(accounts), err => {
+            if (err) reject(err);
+
+            resolve(accounts);
+        });
+    });
+  });
+}
+
+function getMusicPrefer(user_id) {
+  return new Promise((resolve, reject) => {
+    var temp_prefer = [];
+    findAccount().then(accounts => {
+        accounts = accounts.map(a => {
+            if(a.id == user_id){
+              temp_prefer = a.prefer;
+            }
+            return a;
+        });
+    resolve(temp_prefer);
+    });
+  });
+}
+
 module.exports = {
     listPosts,
     createPost,
     resetPostTime,
     donePost,
     createAccount,
-    findAccount
+    findAccount,
+    setOfficeLocation,
+    setHomeLocation,
+    sentVedioGenres,
+    getVedioGenres,
+    sentMusicPrefer,
+    getMusicPrefer
 };
