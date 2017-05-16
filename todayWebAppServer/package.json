@@ -1,7 +1,7 @@
 {
-  "name": "weathermood-server",
+  "name": "todayApp",
   "version": "1.0.0",
-  "description": "WeatherMood server.",
+  "description": "todayApp server.",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
