@@ -11,6 +11,8 @@ import {
     Link
 } from 'react-router-dom'
 import moment from 'moment';
+import { SingleDatePicker} from 'react-dates';
+import 'react-dates/lib/css/_datepicker.css';
 import {
   createPost, setInputDanger, setTimeDanger, setDeadlineDanger,
   setPlaceDanger,setInputValue, toggleHasDeadline,
@@ -30,6 +32,11 @@ class Create extends React.Component {
     }
     constructor(props) {
         super(props);
+
+        this.state = {
+          focused: true
+        }
+
         this.inputEl = null;
 
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -78,7 +85,7 @@ class Create extends React.Component {
     }
 
     handle_deadline_button_click(time){
-      this.props.dispatch(setDeadline(month[moment().month()+ time]));
+      this.props.dispatch(setDeadline(time));
       this.props.dispatch(setDeadlineDanger("is_false"));
       this.props.dispatch(setDeadlineButtonColor(time));
     }
@@ -100,6 +107,7 @@ class Create extends React.Component {
     render() {
         const {has_deadline, link_text, clicked, deadline_button_color ,estimate_button_color, inputValue, placeDanger, timeDanger, deadlineDanger} = this.props;
         const inputDanger = this.props.inputDanger ? 'has-danger' : '';
+        console.log(this.props);
         return (
           <div>
             <div className="top">
@@ -150,6 +158,22 @@ class Create extends React.Component {
                   <span className="deadline_month">{`${month[moment().month() + 2]}`}</span>
                 </Button>{' '}
               </div>
+
+///////////////////////////////////////////////////
+
+              <div class="datePickerContainer">
+                <SingleDatePicker
+                  date={null} // momentPropTypes.momentObj or null
+                  onDateChange={date => this.handle_deadline_button_click(date)} // PropTypes.func.isRequired
+                  focused={this.state.focused} // PropTypes.bool
+                  onFocusChange={({ focused }) => this.setState({ focused })} // PropTypes.func.isRequired
+                  placeholder={"Pick a date"}
+                />
+
+              </div>
+
+
+
               <div className="place-container">
                 <span className={`deadline-text ${placeDanger}`}>places</span>
                 <div className="place">

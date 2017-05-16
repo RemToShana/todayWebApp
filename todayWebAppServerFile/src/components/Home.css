@@ -1,23 +1,33 @@
 .lg-time{
   color: #FD4D3A;
-  font-size: 4rem;
+  font-size: 3rem;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-weight: 100;
 }
 .time{
   color: #FD4D3A;
   font-size: 2rem;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-weight: 100;
 }
 .minute{
-  color: #FD4D3A;
+  color: #95989A;
   font-size: 2rem;
   text-align: center;
-  margin-bottom: 20px;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-weight: 100;
+  margin-bottom: 8%;
 }
 .button{
   text-align: center;
+  margin-top: 10%;
 }
 .button > Button{
   border-radius:100%;
-  box-shadow: 0px 2px 1px #888888;
+  width:100px;
+  height:100px;
+  border-width: 2px;
+  border-color: #E2E2E2;
   margin: 1%;
 }
 .center{
@@ -25,17 +35,26 @@
   margin: 1%;
 }
 .mystuff{
-  color: white;
+  color: #2A729F;
   font-size: 3rem;
   text-align: left;
+  letter-spacing: 5px;
+}
+.video{
+  color: #55A52A;
+  font-size: 3rem;
+  text-align: left;
+  letter-spacing: 5px;
 }
 .article{
-  color: white;
+  color: #D63E66;
   font-size: 3rem;
   text-align: left;
+  letter-spacing: 5px;
 }
 .link_button{
   width: 600px;
+  margin-bottom: 5%;
 }
 .bottom-container{
   margin: 100px auto 0 auto;

@@ -39,6 +39,13 @@
   margin-top: 3%;
   margin-bottom: 10%;
 }
+.datePickerContainer{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3%;
+  margin-bottom: 10%;
+}
+
 .estimate_time{
   color: #FD4D3A;
   font-size: 1.5rem;

@@ -84,7 +84,7 @@ class Home extends React.Component {
             </div>
             <div className="minute">minutes</div>
             <div  className="center">
-              <Button color="info" tag={Link} to='/mystuff' onClick={() => this.jump_button_click()} className="link_button">
+              <Button color="white" tag={Link} to='/mystuff' onClick={() => this.jump_button_click()} className="link_button">
                 <div className="mystuff">
                   &nbsp;
                   <i className="fa fa-list"></i>
@@ -93,8 +93,20 @@ class Home extends React.Component {
                 </div>
               </Button>
             </div>
+
+            <div  className="center">
+              <Button color="white" tag={Link} to='/mystuff' onClick={() => this.jump_button_click()} className="link_button">
+                <div className="video">
+                  &nbsp;
+                  <i className="fa fa-list"></i>
+                  &nbsp;&nbsp;&nbsp;
+                  VIDEO
+                </div>
+              </Button>
+            </div>
+
             <div className="center">
-              <Button color="danger" tag={Link} to='/article' onClick={() => this.jump_button_click()} className="link_button">
+              <Button color="white" tag={Link} to='/article' onClick={() => this.jump_button_click()} className="link_button">
                 <div className="article">
                   &nbsp;
                   <i className="fa fa-newspaper-o"></i>
