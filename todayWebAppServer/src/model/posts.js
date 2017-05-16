@@ -32,7 +32,10 @@ function listPosts(HomeTime = 0, user_id) {
     });
 }
 
-function createPost(place, deadline, time, input, user_id) {
+function createPost(place, deadline, time, input, has_deadline, user_id) {
+    if(!has_deadline){
+      deadline = "Routine";
+    }
     return new Promise((resolve, reject) => {
         const newPost = {
             id: uuid(),

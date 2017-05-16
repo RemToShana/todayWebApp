@@ -211,13 +211,13 @@ export function listPosts(HomeTime = 0, user_id = cookie.load('id')) {
     });
 }
 
-export function createPost(place, deadline, time, input, user_id = cookie.load('id')) {
+export function createPost(place, deadline, time, input, has_deadline, user_id = cookie.load('id')) {
     let url = `${postBaseUrl}/posts`;
 
     console.log(`Making POST request to: ${url}`);
 
     return axios.post(url, {
-      place, deadline, time, input, user_id
+      place, deadline, time, input, has_deadline, user_id
     }).then(function(res) {
         if (res.status !== 200)
             throw new Error(`Unexpected response code: ${res.status}`);

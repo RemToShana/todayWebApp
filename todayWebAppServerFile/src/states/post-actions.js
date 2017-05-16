@@ -255,9 +255,9 @@ export function listPosts(HomeTime = 0, realcreate = false) {
     };
 };
 
-export function createPost(place, deadline, time, input, user_id = cookie.load("id")) {
+export function createPost(place, deadline, time, input, has_deadline, user_id = cookie.load("id")) {
     return (dispatch, getState) => {
-        return createPostFromApi(place, deadline, time, input, user_id).then( () => {
+        return createPostFromApi(place, deadline, time, input, has_deadline, user_id).then( () => {
             dispatch(listPosts(0, true));
         }).catch(err => {
             console.error('Error creating posts', err);

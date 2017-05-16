@@ -16,13 +16,13 @@ router.get('/posts', function(req, res) {
 
 // CreatePost
 router.post('/posts', function(req, res) {
-    const {place, deadline, time, input, user_id} = req.body;
-    if (!input || !time || !deadline || !place || !user_id) {
+    const {place, deadline, time, input, has_deadline, user_id} = req.body;
+    if (!input || !time || !(deadline || !has_deadline) || !place || !user_id) {
         const err = new Error('Mood and text are required');
         err.status = 400;
         throw err;
     }
-    postModel.createPost(place, deadline, time, input, user_id).then(post => {
+    postModel.createPost(place, deadline, time, input, has_deadline, user_id).then(post => {
         res.json(post);
     });
 });

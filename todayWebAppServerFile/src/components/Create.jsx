@@ -62,7 +62,7 @@ class Create extends React.Component {
         this.props.dispatch(setPlaceDanger("is_true"));
         return;
       }
-      this.props.dispatch(createPost(this.props.place, this.props.deadline, this.props.estimate_time, this.props.inputValue));
+      this.props.dispatch(createPost(this.props.place, this.props.deadline, this.props.estimate_time, this.props.inputValue, this.props.has_deadline));
       this.props.dispatch(setLinkText('/'));
       this.props.dispatch(resetCreate());
     }
@@ -98,7 +98,7 @@ class Create extends React.Component {
     }
 
     render() {
-        const {link_text, clicked, deadline_button_color ,estimate_button_color, inputValue, placeDanger, timeDanger, deadlineDanger} = this.props;
+        const {has_deadline, link_text, clicked, deadline_button_color ,estimate_button_color, inputValue, placeDanger, timeDanger, deadlineDanger} = this.props;
         const inputDanger = this.props.inputDanger ? 'has-danger' : '';
         return (
           <div>
