@@ -155,13 +155,13 @@
 import axios from 'axios';
 import cookie from 'react-cookie';
 // Develop server URL
-const postBaseUrl = 'http://localhost:8080/api';
+// const postBaseUrl = 'http://localhost:8080/api';
 
 // Staging server URL
 // const postBaseUrl = 'http://weathermood-staging.us-west-2.elasticbeanstalk.com/api';
 
 // Production server URL
-// const postBaseUrl = 'http://weathermood-production.us-west-2.elasticbeanstalk.com/api';
+const postBaseUrl = 'http://todayApp.us-west-2.elasticbeanstalk.com/api';
 
 export function findAccount(id = "", username = "", password = ""){
   let url = `${postBaseUrl}/accounts`;

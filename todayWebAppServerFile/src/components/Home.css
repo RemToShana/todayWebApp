@@ -52,9 +52,18 @@
   text-align: left;
   letter-spacing: 5px;
 }
+.icon{
+  width:40px;
+  height:40px;
+}
 .link_button{
   width: 600px;
-  margin-bottom: 5%;
+  border-width: 20px !important;
+  border-radius: 100px !important;
+  border-color: pink !important;
+  background-color: white !important;
+  margin-bottom: 2% !important;
+  padding-top: 20%;
 }
 .bottom-container{
   margin: 100px auto 0 auto;

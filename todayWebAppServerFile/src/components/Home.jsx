@@ -19,6 +19,7 @@ import {
 import './Home.css';
 
 
+
 class Home extends React.Component {
     static propTypes = {
         dispatch: PropTypes.func
@@ -84,10 +85,10 @@ class Home extends React.Component {
             </div>
             <div className="minute">minutes</div>
             <div  className="center">
-              <Button color="white" tag={Link} to='/mystuff' onClick={() => this.jump_button_click()} className="link_button">
+              <Button  tag={Link} to='/mystuff' onClick={() => this.jump_button_click()} className="link_button">
                 <div className="mystuff">
                   &nbsp;
-                  <i className="fa fa-list"></i>
+                  <img src={require('../resource/myStuff.png')} className="icon"></img>
                   &nbsp;&nbsp;&nbsp;
                   MY STUFF
                 </div>
@@ -95,10 +96,11 @@ class Home extends React.Component {
             </div>
 
             <div  className="center">
-              <Button color="white" tag={Link} to='/mystuff' onClick={() => this.jump_button_click()} className="link_button">
+              <Button tag={Link} to='/mystuff' onClick={() => this.jump_button_click()} className="link_button">
                 <div className="video">
                   &nbsp;
-                  <i className="fa fa-list"></i>
+                  <img src={require('../resource/video.png')} className="icon"></img>
+
                   &nbsp;&nbsp;&nbsp;
                   VIDEO
                 </div>
@@ -106,10 +108,10 @@ class Home extends React.Component {
             </div>
 
             <div className="center">
-              <Button color="white" tag={Link} to='/article' onClick={() => this.jump_button_click()} className="link_button">
+              <Button  outline color="primary" tag={Link} to='/article' onClick={() => this.jump_button_click()} className="link_button">
                 <div className="article">
                   &nbsp;
-                  <i className="fa fa-newspaper-o"></i>
+                  <img src={require('../resource/articles.png')} className="icon"></img>
                   &nbsp;&nbsp;&nbsp;
                   ARTICLE
                 </div>

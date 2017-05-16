@@ -28,7 +28,7 @@ export function setHomeTime(time) {
 export function setHomeButtonColor(time = 0) {
     var Home_button_color = ["secondary", "secondary", "secondary", "secondary", "secondary"];
     if(time == 25){
-      Home_button_color = ["primary", "secondary", "secondary", "secondary", "secondary"];
+      Home_button_color = ["#244048", "secondary", "secondary", "secondary", "secondary"];
     }
     else if(time == 10){
       Home_button_color = ["secondary", "primary", "secondary", "secondary", "secondary"];
