@@ -19,6 +19,8 @@ import {
 import './Home.css';
 
 
+import ReactPlayer from 'react-player'
+
 
 class Home extends React.Component {
     static propTypes = {
@@ -64,7 +66,9 @@ class Home extends React.Component {
 
     render() {
         const {Home_button_color, success_create, tooltipOpen, music_state, music_stage, registor_username_value, success_create_account} = this.props;
+
         return (
+
           <div>
             <div className="button">
                 <Button color={`${Home_button_color[0]}`} onClick={() => this.handle_time_button_click(25)}>
@@ -88,9 +92,13 @@ class Home extends React.Component {
               <Button  tag={Link} to='/mystuff' onClick={() => this.jump_button_click()} className="myStuff_button">
                 <div className="mystuff">
                   &nbsp;
-                  <img src={require('../resource/myStuff.png')} className="icon"></img>
+                  <video loop={true} controls={false} autoPlay style={{width:"80px", marginTop:"20px", marginBottom:"-20px"}} >
+                    <source src={"/myStuff.mp4"} type="video/mp4"/>
+                  </video>
                   &nbsp;&nbsp;&nbsp;
-                  MY STUFF
+                  <h1 className="mystuffWord">
+                    MY STUFF
+                  </h1>
                 </div>
               </Button>
             </div>
@@ -154,9 +162,9 @@ class Home extends React.Component {
             }
             <Tooltip placement="bottom" isOpen={tooltipOpen} autohide={false} target="play_music" toggle={this.handleTooltipToggle}>
 
-              <img src={require('../resource/note1.png')} className="icon" onClick={() => this.handle_play_button_click()}></img>&nbsp;&nbsp;
-              <img src={require('../resource/note2.png')} className="icon" onClick={() => this.handle_play_button_click()}></img>&nbsp;&nbsp;
-              <img src={require('../resource/note3.png')} className="icon" onClick={() => this.handle_play_button_click()}></img>&nbsp;&nbsp;
+              <img src={require(`../resource/note1_${music_stage[0]}.png`)} className="icon" onClick={() => this.handle_play_button_click()}></img>&nbsp;&nbsp;
+              <img src={require(`../resource/note2_${music_stage[1]}.png`)} className="icon" onClick={() => this.handle_play_button_click()}></img>&nbsp;&nbsp;
+              <img src={require(`../resource/note3_${music_stage[2]}.png`)} className="icon" onClick={() => this.handle_play_button_click()}></img>&nbsp;&nbsp;
 
             </Tooltip>
           </div>

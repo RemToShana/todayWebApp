@@ -75,19 +75,31 @@
   border-color: #87C1E5 !important;
   background-color: white !important;
   margin-bottom: 2% !important;
-  padding: 2% !important;
+
 }
 .icon_plus{
   width:40px;
   height:40px;
+  transition: 0.2s ease;
+}
+.icon_plus:hover{
+  transform: scale(1.1);
 }
 .icon_music{
   width:80px;
   height:80px;
+  transition: 0.2s ease;
+}
+.icon_music:hover{
+  transform: scale(1.1);
 }
 .icon_profile{
   width:40px;
   height:40px;
+  transition: 0.2s ease;
+}
+.icon_profile:hover{
+  transform: scale(1.1);
 }
 .video_button{
   width: 400px;
@@ -166,4 +178,12 @@
 }
 #play_music:hover {
   transform: scale(1.2);
+}
+.mystuffWord{
+  margin-left:150px !important;
+  margin-bottom: 50px !important;
+  margin-top:-50px;
+  font-size: 2rem;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-weight: 300;
 }

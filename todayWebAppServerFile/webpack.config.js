@@ -23,6 +23,7 @@ module.exports = {
         path: serverDistPath,
         filename: '[name].bundle.js'
     },
+
     module: {
         rules: [
             {
@@ -59,6 +60,7 @@ module.exports = {
                     }
                 ]
             },
+
             { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },
             {
                 test: /\.mp3$/,
@@ -78,9 +80,18 @@ module.exports = {
                   query: {
                     jsx: true
                   }
-                }
+                },
+
               ]
-            }
+            },
+            {
+              test: /\.html$/,
+              loader: 'html-loader?attrs[]=video:src'
+            },
+            {
+              test: /\.mp4$/,
+              loader: 'url?limit=10000&mimetype=video/mp4'
+          }
         ]
     },
     plugins: [new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: 'vendor.bundle.js', minChunks: 2})],

@@ -43,6 +43,9 @@ class Setting extends React.Component {
 
       return (
           <div>
+            <video loop = {true} controls={false} autoPlay style={{width:"370px", position:"absolute",marginLeft:"54.5%",marginTop:"-32px", zIndex:"-10"}} >
+              <source src={"/fire.mp4"} type="video/mp4"/>
+            </video>
             <Button className="backbtn" tag={Link} to='/'>
               <img  className="backIcon" src={require('../resource/back.png')} onClick={() => this.handle_place_button_click("home")}></img>
             </Button>
