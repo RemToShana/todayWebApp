@@ -153,11 +153,11 @@ class Home extends React.Component {
                 </Alert>
             }
             <Tooltip placement="bottom" isOpen={tooltipOpen} autohide={false} target="play_music" toggle={this.handleTooltipToggle}>
-              <i className={`fa fa-user music-class-${music_stage[0]}`} onClick={() => this.handle_play_button_click()}></i>&nbsp;&nbsp;
-              <i className={`fa fa-user music-class-${music_stage[1]}`} onClick={() => this.handle_play_button_click()}></i>&nbsp;&nbsp;
-              <i className={`fa fa-user music-class-${music_stage[2]}`} onClick={() => this.handle_play_button_click()}></i>&nbsp;&nbsp;
-              <i className={`fa fa-user music-class-${music_stage[3]}`} onClick={() => this.handle_play_button_click()}></i>&nbsp;&nbsp;
-              <i className={`fa fa-user music-class-${music_stage[4]}`} onClick={() => this.handle_play_button_click()}></i>&nbsp;&nbsp;
+
+              <img src={require('../resource/note1.png')} className="icon" onClick={() => this.handle_play_button_click()}></img>&nbsp;&nbsp;
+              <img src={require('../resource/note2.png')} className="icon" onClick={() => this.handle_play_button_click()}></img>&nbsp;&nbsp;
+              <img src={require('../resource/note3.png')} className="icon" onClick={() => this.handle_play_button_click()}></img>&nbsp;&nbsp;
+
             </Tooltip>
           </div>
         );

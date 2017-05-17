@@ -155,7 +155,7 @@
 import axios from 'axios';
 import cookie from 'react-cookie';
 // Develop server URL
-// const postBaseUrl = 'http://localhost:8081/api';
+// const postBaseUrl = 'http://localhost:8080/api';
 
 // Staging server URL
 // const postBaseUrl = 'http://weathermood-staging.us-west-2.elasticbeanstalk.com/api';

@@ -1,6 +1,12 @@
+.top{
+  margin-top: 5%;
+}
 .home_office{
-  font-size: 25px;
-  color: gray !important;
+  font-size: 30px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif !important;
+  color: #244048 !important;
   text-align: center;
   margin: 0 auto 5% auto;
   padding-top: 2%;
@@ -19,10 +25,19 @@
   /*color: #FD4D3A !important;*/
   color: black;
 }
+.location{
+  font-weight: 100;
+  letter-spacing: 1px;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif !important;
+  color:#244048;
+}
 
 .setting-home{
   font-size: 30px;
-  margin-bottom: 5%;
+  font-weight: 100;
+  letter-spacing: 1px;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif !important;
+  margin-bottom: 2%;
 }
 .place_or_container{
   text-align: center;
@@ -41,10 +56,24 @@
 .button-save{
   text-align: center;
   font-size: 25px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif !important;
 }
 .place-button{
-  margin-bottom: 20px;
+  margin-left:17%;
+  margin-top:0px;
+  margin-bottom: 100px;
 }
 .place-button > a{
   height: 50px;
+}
+.save_button{
+  background-color: #BFE4EF !important;
+  width:400px !important;
+  height: 50px !important;
+  border-radius: 5px !important;
+  border-width: 2px !important;
+  border-color: #BFE4EF !important;
+
 }

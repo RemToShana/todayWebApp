@@ -85,14 +85,17 @@ class PlaceSetting extends React.Component {
 
       return (
           <div>
+            <Button className="backbtn" tag={Link} to='/'>
+              <img  className="backIcon" src={require('../resource/back.png')} onClick={() => this.handle_place_button_click("home")}></img>
+            </Button>
             <div className="card-container">
               <div className="top">
-                <Button tag={Link} to='/setting'>{`<`}</Button>
+
                 <div className="home_office">Home & Office</div>
               </div>
               <div className="setting-place-container">
                 <div className="setting-home">
-                  <i className="fa fa-home" aria-hidden="true"></i>
+                  <img src={require('../resource/settings_home.png')} className="settingsIcon"></img>
                   &nbsp;&nbsp;
                   Home
                 </div>
@@ -105,10 +108,10 @@ class PlaceSetting extends React.Component {
                 <div className="use_current_location">
                   <i className="fa fa-location-arrow place-large" aria-hidden="true"></i>
                   &nbsp;&nbsp;
-                  <Button onClick={() => this.getHomeLocation()}>Use Current Location</Button>
+                  <Button className="location" onClick={() => this.getHomeLocation()}>Use Current Location</Button>
                 </div>
                 <div className="setting-home">
-                  <i className="fa fa-home" aria-hidden="true"></i>
+                  <img src={require('../resource/settings_office.png')} className="settingsIcon"></img>
                   &nbsp;&nbsp;
                   Office
                 </div>
@@ -121,12 +124,12 @@ class PlaceSetting extends React.Component {
                 <div className="use_current_location">
                   <i className="fa fa-location-arrow place-large" aria-hidden="true"></i>
                   &nbsp;&nbsp;
-                  <Button onClick={() => this.getOfficeLocation()}>Use Current Location</Button>
+                  <Button className="location"  onClick={() => this.getOfficeLocation()}>Use Current Location</Button>
                 </div>
               </div>
               <div className="place-button">
-                <Button color="info" onClick={() => this.place_setting_save_click(home_address, office_address)} className="link_button" tag={Link} to='/setting'>
-                  <span className="button-save">Save</span>
+                <Button color="info" onClick={() => this.place_setting_save_click(home_address, office_address)} className="save_button" tag={Link} to='/setting'>
+                  <span className="button-save">save</span>
                 </Button>
               </div>
             </div>
