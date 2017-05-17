@@ -85,7 +85,7 @@ class Home extends React.Component {
             </div>
             <div className="minute">minutes</div>
             <div  className="center">
-              <Button  tag={Link} to='/mystuff' onClick={() => this.jump_button_click()} className="link_button">
+              <Button  tag={Link} to='/mystuff' onClick={() => this.jump_button_click()} className="myStuff_button">
                 <div className="mystuff">
                   &nbsp;
                   <img src={require('../resource/myStuff.png')} className="icon"></img>
@@ -96,7 +96,7 @@ class Home extends React.Component {
             </div>
 
             <div  className="center">
-              <Button tag={Link} to='/mystuff' onClick={() => this.jump_button_click()} className="link_button">
+              <Button tag={Link} to='/mystuff' onClick={() => this.jump_button_click()} className="video_button">
                 <div className="video">
                   &nbsp;
                   <img src={require('../resource/video.png')} className="icon"></img>
@@ -108,7 +108,7 @@ class Home extends React.Component {
             </div>
 
             <div className="center">
-              <Button  outline color="primary" tag={Link} to='/article' onClick={() => this.jump_button_click()} className="link_button">
+              <Button  tag={Link} to='/article' onClick={() => this.jump_button_click()} className="article_button">
                 <div className="article">
                   &nbsp;
                   <img src={require('../resource/articles.png')} className="icon"></img>
@@ -119,14 +119,15 @@ class Home extends React.Component {
             </div>
             <div className="bottom-container">
               <NavLink tag={Link} to='/create' onClick={() => this.jump_button_click()}>
-                <i className="fa fa-plus plus-class"></i>
+                <img src={require('../resource/plus.png')} className="icon_plus"></img>
               </NavLink>
               <div className = "music_play_button">
-                <i className={`fa fa-${music_state} ${music_state}-button-class`} id = "play_music"></i>
+                <img src={require('../resource/musicPlay.png')} className="icon_music" id = "play_music"></img>
+
                 <audio id="audio" src={require('../resource/1.mp3')} hidden="true"></audio>
               </div>
               <NavLink tag={Link} to='/setting'>
-                <i className="fa fa-user user-class"></i>
+                <img src={require('../resource/profile.png')} className="icon_profile"></img>
               </NavLink>
             </div>{
                 success_create &&
@@ -135,7 +136,7 @@ class Home extends React.Component {
             {
                 success_create_account &&
                 <Alert color='warning' className='success_create_account'>
-                  Wecome!
+                  Welcome!
                   <br/>
                   {registor_username_value}
                   <br/>

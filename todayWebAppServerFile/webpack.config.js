@@ -3,6 +3,7 @@ const webpack = require('webpack');
 
 const srcPath = path.resolve(__dirname, 'src');
 const distPath = path.resolve(__dirname, 'dist');
+const serverDistPath = path.resolve(__dirname, '../todayWebAppServer/dist');
 
 module.exports = {
     context: srcPath,
@@ -19,7 +20,7 @@ module.exports = {
         vendor: ['react', 'react-dom']
     },
     output: {
-        path: distPath,
+        path: serverDistPath,
         filename: '[name].bundle.js'
     },
     module: {

@@ -77,7 +77,7 @@ class Registor extends React.Component {
                 <Input placeholder="Password" type="Password" className="account" getRef={el => {this.input_password = el}} value={registor_password_value} onChange={this.handlePasswordInputChange}/>
               </Alert>
               <div className="create_account_button">
-                <Button color="warning" tag={Link} to='/' onClick={() => this.handle_registor_click(registor_username_value, registor_password_value)}>
+                <Button className="create" color="warning" tag={Link} to='/' onClick={() => this.handle_registor_click(registor_username_value, registor_password_value)}>
                   <span className="create_account">
                     Create an account
                   </span>

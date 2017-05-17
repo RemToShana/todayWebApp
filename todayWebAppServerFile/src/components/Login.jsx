@@ -86,7 +86,7 @@ class Login extends React.Component {
               </Alert>
               <br/>
               <div className="sign_in_button">
-                <Button color="warning"  tag={Link} to='/' onClick={() => this.handleSignIn(login_username_value, login_password_value)}>
+                <Button className="sign_in_btn"color="warning"  tag={Link} to='/' onClick={() => this.handleSignIn(login_username_value, login_password_value)}>
                   <span className="sign_in">
                     SIGN IN
                   </span>

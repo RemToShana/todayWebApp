@@ -16,11 +16,11 @@
   text-align: center;
   font-family: 'San Francisco', Helvetica, Arial, san-serif;
   font-weight: 100;
-  margin-bottom: 8%;
+  margin-bottom: 3%;
 }
 .button{
   text-align: center;
-  margin-top: 10%;
+  margin-top: 3%;
 }
 .button > Button{
   border-radius:100%;
@@ -36,34 +36,64 @@
 }
 .mystuff{
   color: #2A729F;
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: left;
   letter-spacing: 5px;
 }
 .video{
   color: #55A52A;
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: left;
   letter-spacing: 5px;
 }
 .article{
   color: #D63E66;
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: left;
   letter-spacing: 5px;
 }
 .icon{
+  width:30px;
+  height:30px;
+}
+.myStuff_button{
+  width: 400px;
+  border-width: 3px !important;
+  border-radius: 10px !important;
+  border-color: #87C1E5 !important;
+  background-color: white !important;
+  margin-bottom: 2% !important;
+  padding: 2% !important;
+}
+.icon_plus{
   width:40px;
   height:40px;
 }
-.link_button{
-  width: 600px;
-  border-width: 20px !important;
-  border-radius: 100px !important;
-  border-color: pink !important;
+.icon_music{
+  width:80px;
+  height:80px;
+}
+.icon_profile{
+  width:40px;
+  height:40px;
+}
+.video_button{
+  width: 400px;
+  border-width: 3px !important;
+  border-radius: 10px !important;
+  border-color: #A8E587 !important;
   background-color: white !important;
   margin-bottom: 2% !important;
-  padding-top: 20%;
+  padding: 2% !important;
+}
+.article_button{
+  width: 400px;
+  border-width: 3px !important;
+  border-radius: 10px !important;
+  border-color: #E587A0 !important;
+  background-color: white !important;
+  margin-bottom: 2% !important;
+  padding: 2% !important;
 }
 .bottom-container{
   margin: 100px auto 0 auto;

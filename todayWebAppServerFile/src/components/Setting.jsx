@@ -43,10 +43,11 @@ class Setting extends React.Component {
 
       return (
           <div>
+            <Button className="backbtn" tag={Link} to='/'>
+              <img  className="backIcon" src={require('../resource/back.png')} onClick={() => this.handle_place_button_click("home")}></img>
+            </Button>
             <div className="card-container">
-              <div className="setting-top">
-                <Button tag={Link} to='/' color="secondary"><span className="large_back">{`<`}</span></Button>
-              </div>
+
               <div className="setting-top">
                 <div className="left-top">
                   <div className="welcome">
@@ -57,32 +58,37 @@ class Setting extends React.Component {
                   </div>
                 </div>
                 <div className="right-top">
-                  <NavLink tag={Link} to='/' onClick={() => this.handle_log_out()}>Log out</NavLink>
+                  <img  className="pic" src={require('../resource/profilePic.png')} ></img>
                 </div>
               </div>
               <div className="setting-item-container">
                 <div className="flex-display">
-                  <NavLink tag={Link} to='/placeSetting'>Office & Home</NavLink>
-                  <i className="fa fa-home centered" aria-hidden="true"></i>
+                  <NavLink className="subtitle" tag={Link} to='/placeSetting'>Home & Office</NavLink>
+                  <img src={require('../resource/settings_home.png')} className="settingsIcon"></img>
                 </div>
                 <hr/>
                 <div className="flex-display">
-                  <NavLink tag={Link} to='/vedioGenres'>Vedio Genres</NavLink>
-                  <i className="fa fa-newspaper-o centered" aria-hidden="true"></i>
+                  <NavLink className="subtitle" tag={Link} to='/vedioGenres'>Video Genres</NavLink>
+                  <img src={require('../resource/settings_video.png')} className="settingsIcon"></img>
                 </div>
                 <hr/>
                 <div className="flex-display">
-                  <NavLink tag={Link} to='/musicPreferences'>Music Preferences</NavLink>
-                  <i className="fa fa-music centered" aria-hidden="true"></i>
+                  <NavLink className="subtitle"  tag={Link} to='/musicPreferences'>Music Preferences</NavLink>
+                  <img src={require('../resource/settings_music.png')} className="settingsIcon"></img>
                 </div>
                 <hr/>
                 <div className="flex-display">
-                  <NavLink tag={Link} to='/articleTopics'>Terms of Use</NavLink>
-                  <i className="fa fa-life-ring centered" aria-hidden="true"></i>
+                  <NavLink className="subtitle" tag={Link} to='/articleTopics'>Terms of Use</NavLink>
+                  <img src={require('../resource/settings_terms.png')} className="settingsIcon"></img>
                 </div>
                 <hr/>
               </div>
             </div>
+
+            <div className="logoutContainer">
+              <NavLink className="logout" tag={Link} to='/' onClick={() => this.handle_log_out()}>Log out</NavLink>
+            </div>
+
           </div>
       );
     }

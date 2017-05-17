@@ -110,8 +110,12 @@ class Create extends React.Component {
         console.log(this.props);
         return (
           <div>
+
+            <Button className="backbtn" onClick={() => this.handle_back_button_click()} tag={Link} to='/'>
+              <img  className="backIcon" src={require('../resource/back.png')} onClick={() => this.handle_place_button_click("home")}></img>
+            </Button>
+
             <div className="top">
-              <Button onClick={() => this.handle_back_button_click()} tag={Link} to='/'>{`<`}</Button>
               <div className="create_event">Create Event</div>
             </div>
 
@@ -121,45 +125,34 @@ class Create extends React.Component {
               </Alert>
             </div>
             <div className="time-container">
-              <span className={`estimated-time-text ${timeDanger}`}>estimated time</span>
+              <span className="subtitle">estimated time</span>
               <br/>
               <div className="button-container">
-                <Button color={`${estimate_button_color[0]}`} onClick={() => this.handle_time_button_click(5)}>
+                <Button className="timeBubble" color={`${estimate_button_color[0]}`} onClick={() => this.handle_time_button_click(5)}>
                   <span className="estimate_time">&nbsp;5&nbsp;</span>
                 </Button>{' '}
-                <Button color={`${estimate_button_color[1]}`} onClick={() => this.handle_time_button_click(10)}>
+                <Button className="timeBubble" color={`${estimate_button_color[1]}`} onClick={() => this.handle_time_button_click(10)}>
                   <span className="estimate_time">10</span>
                 </Button>{' '}
-                <Button color={`${estimate_button_color[2]}`} onClick={() => this.handle_time_button_click(15)}>
+                <Button className="timeBubble" color={`${estimate_button_color[2]}`} onClick={() => this.handle_time_button_click(15)}>
                   <span className="estimate_time">15</span>
                 </Button>{' '}
-                <Button color={`${estimate_button_color[3]}`} onClick={() => this.handle_time_button_click(20)}>
+                <Button className="timeBubble" color={`${estimate_button_color[3]}`} onClick={() => this.handle_time_button_click(20)}>
                   <span className="estimate_time">20</span>
                 </Button>{' '}
-                <Button color={`${estimate_button_color[4]}`} onClick={() => this.handle_time_button_click(25)}>
+                <Button className="timeBubble" color={`${estimate_button_color[4]}`} onClick={() => this.handle_time_button_click(25)}>
                   <span className="estimate_time">25</span>
                 </Button>{' '}
               </div>
               <div className="deadline">
-                <span className={`deadline-text ${deadlineDanger}`}>deadline</span>
+                <span className="subtitle">deadline</span>
                 <label className="switch">
                   <input type="checkbox" onChange={() => this.handle_toggle_button_click()} defaultChecked></input>
                   <div className="slider round"></div>
                 </label>
               </div>
-              <div className="button-container">
-                <Button color={`${deadline_button_color[0]}`} onClick={() => this.handle_deadline_button_click(0)}>
-                  <span className="deadline_month">{`${month[moment().month()]}`}</span>
-                </Button>{' '}
-                <Button color={`${deadline_button_color[1]}`} onClick={() => this.handle_deadline_button_click(1)}>
-                  <span className="deadline_month">{`${month[moment().month() + 1 ]}`}</span>
-                </Button>{' '}
-                <Button color={`${deadline_button_color[2]}`} onClick={() => this.handle_deadline_button_click(2)}>
-                  <span className="deadline_month">{`${month[moment().month() + 2]}`}</span>
-                </Button>{' '}
-              </div>
 
-///////////////////////////////////////////////////
+
 
               <div class="datePickerContainer">
                 <SingleDatePicker
@@ -169,31 +162,30 @@ class Create extends React.Component {
                   onFocusChange={({ focused }) => this.setState({ focused })} // PropTypes.func.isRequired
                   placeholder={"Pick a date"}
                 />
-
               </div>
 
 
 
               <div className="place-container">
-                <span className={`deadline-text ${placeDanger}`}>places</span>
+                <span className="subtitle">places</span>
                 <div className="place">
                   <div className="verticle-flex">
-                    <i className={`fa fa-home lg ${clicked[0]}`} onClick={() => this.handle_place_button_click("home")}></i>
+                      <img  className="placeIcon" src={require('../resource/home.png')} onClick={() => this.handle_place_button_click("home")}></img>
                     <span className={`text-center ${clicked[0]}`}>home</span>
                   </div>
                   <div className="verticle-flex">
-                    <i className={`fa fa-building lg ${clicked[1]}`} onClick={() => this.handle_place_button_click("office")}></i>
+                    <img  className="placeIcon" src={require('../resource/office.png')} onClick={() => this.handle_place_button_click("office")}></img>
                     <span className={`text-center ${clicked[1]}`}>office</span>
                   </div>
                   <div className="verticle-flex">
-                    <i className={`fa fa-coffee lg ${clicked[2]}`} onClick={() => this.handle_place_button_click("anywhere")}></i>
+                    <img  className="placeIcon" src={require('../resource/anywhere.png')} onClick={() => this.handle_place_button_click("anywhere")}></img>
                     <span className={`text-center ${clicked[2]}`}>anywhere</span>
                   </div>
                 </div>
               </div>
               <div className="create_button">
-                <Button color="secondary" onClick={() => this.handle_create()}>
-                  <span className="deadline_month">DONE</span>
+                <Button className="doneBtn" color="secondary" onClick={() => this.handle_create()}>
+                  <span className="deadline_month">Done</span>
                 </Button>
               </div>
             </div>

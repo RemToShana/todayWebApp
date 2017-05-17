@@ -1,29 +1,48 @@
 .create_account{
   color: white;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
 }
 .create_account_button{
   margin: 30px auto 0 auto;
   text-align: center;
+  height:100px;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-weight: 100;
 }
 .create_account_button > a{
   width: 100%;
   border-radius: 10px;
+  padding: 3%;
 }
 .login_title > h1{
   width: 100%;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-weight: 100;
 }
 .login_title{
   margin: 30px auto 100px auto;
   width: 30%;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-weight: 100;
 }
 .back_to_login{
   color: gray;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-weight: 100;
 }
 .back_to_login > a{
   color: gray;
   display: inline !important;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-weight: 100;
 }
 .fix{
   padding: 0 !important;
   margin-bottom: 0 !important;
+}
+.create{
+  background-color: #FD4D3A !important;
+  height:60px;
 }

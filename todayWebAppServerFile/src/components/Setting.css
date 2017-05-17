@@ -11,27 +11,41 @@
   border-color: transparent;
 }
 .username{
+  margin-top: 0px;
   color: #FD4D3A;
-  font-size: 60px;
+  font-size: 40px;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-weight: 600;
 }
+
 .welcome{
   display: flex;
 }
+.welcome > h3{
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-size: 40px;
+  font-weight: 100;
+  letter-spacing: 0.4px;
+  color: #242F38;
+}
 .setting-top{
-  margin-top: 30px;
+  margin-top: 100px;
   margin-bottom: 60px;
   display: flex;
 }
 .right-top{
-  margin: 0 0 0 auto;
+  margin-left: 35%;
+  margin-top:0%;
+  position: absolute;
+  z-index: 100px;
 }
-.right-top > a{
-  color: gray !important;
-  transition: 0.2s ease;
+.pic{
+  width: 100px;
 }
-.right-top > a:hover{
-  transform: scale(1.2);
+.logout{
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
 }
+
 .setting-item-container{
   color: gray;
   font-size: 35px;
@@ -46,7 +60,7 @@
 }
 .flex-display > a:hover{
   color: #FD4D3A !important;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 .centered{
   margin: auto 0;
@@ -54,4 +68,45 @@
 }
 hr{
   border: 1px solid #E8E8E8 !important;
+}
+.backbtn{
+  border-color: white !important;
+  border-width: 1px !important;
+  margin-top: 15% !important;
+  margin-left:10% !important;
+  position: absolute !important;
+  z-index: 100 !important;
+}
+.subtitle{
+  font-size: 30px;
+  color: #244048;
+  font-weight: 100;
+  letter-spacing: 1px;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+}
+.logout{
+  color: white;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-size:20px;
+}
+.logout : hover{
+  color: #244048;
+  transition: 0.2 ease;
+}
+.logoutContainer{
+  background-color: #E2E2E2;
+  width:200px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: #E2E2E2;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  text-align: center;
+}
+.settingsIcon{
+  width:70px;
+  height: 70px;
 }

@@ -7,14 +7,20 @@
 }
 .sign_in{
   color: white;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+
+}
+.sign_in_btn{
+  background-color: #FD4D3A !important;
+  border-radius: 10px !important;
 }
 .sign_in_button{
-  margin: 30px auto 0 auto;
+  margin: 15px auto 0 auto;
   text-align: center;
 }
 .sign_in_button > a{
   width: 150px;
-  border-radius: 30px;
+  border-radius: 10px;
 }
 .or_container{
   text-align: center;
@@ -27,15 +33,17 @@
   height: 45px;
 }
 .fb_button{
-  margin: 0 auto 150px auto;
+  margin: 0 auto 100px auto;
   text-align: center;
 }
 .fb_button > Button{
   width: 300px;
-  border-radius: 30px;
+  border-radius: 10px;
 }
 .no_account{
   color: gray;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-weight: 100;
 }
 .no_account_container{
   text-align: center;
@@ -47,9 +55,11 @@
 }
 .registor_button > a{
   width: 200px;
-  border-radius: 30px;
+  border-radius: 10px;
   border: solid #FD4D3A 2px;
 }
 .registor{
   color: #FD4D3A;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-weight: 100;
 }
