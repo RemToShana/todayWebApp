@@ -79,9 +79,12 @@ class MusicPreferences extends React.Component {
 
       return (
           <div>
+            <Button className="backbtn" tag={Link} to='/setting'>
+              <img  className="backIcon" src={require('../resource/back.png')} onClick={() => this.handle_place_button_click("home")}></img>
+            </Button>
             <div className="card-container">
               <div className="top">
-                <Button tag={Link} to='/setting'>{`<`}</Button>
+
                 <div className="home_office">Music Preferences</div>
               </div>
               <ul className="article-list">
@@ -107,7 +110,7 @@ class MusicPreferences extends React.Component {
                 </li>
               </ul>
               <div className="place-button">
-                <Button color="info" className="link_button" tag={Link} to='/setting' onClick={() => this.handle_save_music_prefer_click(prefer)}>
+                <Button color="info" className="save_button" tag={Link} to='/setting' onClick={() => this.handle_save_music_prefer_click(prefer)}>
                   <span className="button-save">Save</span>
                 </Button>
               </div>

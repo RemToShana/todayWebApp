@@ -81,11 +81,12 @@ class Mystuff extends React.Component {
         }
         let children = (
           <div className="card-container">
+
             <Card block inverse color="info" className="top-card">
-             <Button tag={Link} to='/' color="info"><span className="large_back">{`<`}</span></Button>
+
              <CardBlock>
-                <CardTitle className="bigger"><i className="fa fa-times"></i> No post here.</CardTitle>
-                <CardText className="larger">Go add some posts.</CardText>
+                <CardTitle className="bigger"> You have nothing in your todo list.</CardTitle>
+
                 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
              </CardBlock>
             </Card>
@@ -94,27 +95,42 @@ class Mystuff extends React.Component {
         if (posts.length) {
             children = (
               <div className="card-container">
-                <Card block inverse color="info" className={`bottom-card ${card_number[0]}`}>
-                  <CardBlock>
-                  </CardBlock>
+                <Card block inverse color="info" className={`bottom-card ${card_number[0]}`} id="bottomCardId">
+
                 </Card>
-                <Card block inverse color="info" className={`middle-card ${card_number[1]}`}>
-                  <CardBlock>
-                  </CardBlock>
+                <Card block inverse color="info" className={`middle-card ${card_number[1]}`} id="bottomCardId">
+
                 </Card>
                 <Card block inverse color="info" className="top-card">
-                  <Button tag={Link} to='/' color="info"><span className="large_back">{`<`}</span></Button>
+
                   <CardBlock>
-                    <CardTitle className="bigger"><i className="fa fa-list"></i> IT'S TIME TO</CardTitle>
-                    <CardText className="larger">{posts[post_number].text.toUpperCase()}</CardText>
+                    <CardTitle className="cardTitle"><img  className="cardIcon" src={require('../resource/mystuffIcon.png')} ></img>&nbsp; IT'S TIME TO</CardTitle>
+                    <CardText className="larger">{posts[post_number].text}</CardText>
                     <CardText className="mystuff_deadline">
-                      <i className="fa fa-clock-o"></i>
-                      &nbsp;
-                      DEADLINE:&nbsp;
-                      {posts[post_number].deadline}
+                      (deadline:&nbsp;
+                      {posts[post_number].deadline})
                     </CardText>
-                    <div className="done_button">
-                      <Button tag={Link} to='/' color = "info" onClick={() => this.handle_done_button_click(posts[post_number].id)}><span className="done">DONE</span></Button>
+
+
+                    <div className="notyetContainer">
+                      <span className="not_yet">&nbsp;&nbsp;not yet, I still need &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (minutes)</span>
+                    </div>
+                    <div className="mystuff_button">
+                        <Button className="last_time_btn" color={`${Mystuff_button_color[0]}`} onClick={() => this.handle_time_button_click(5, posts[post_number].id)} tag={Link} to='/'>
+                          <span className="last_time">&nbsp;5&nbsp;</span>
+                        </Button>{' '}
+                        <Button className="last_time_btn" color={`${Mystuff_button_color[1]}`} onClick={() => this.handle_time_button_click(10, posts[post_number].id)} tag={Link} to='/'>
+                          <span className="last_time">10</span>
+                        </Button>{' '}
+                        <Button className="last_time_btn" color={`${Mystuff_button_color[2]}`} onClick={() => this.handle_time_button_click(15, posts[post_number].id)} tag={Link} to='/'>
+                          <span className="last_time">15</span>
+                        </Button>{' '}
+                        <Button className="last_time_btn" color={`${Mystuff_button_color[3]}`} onClick={() => this.handle_time_button_click(20, posts[post_number].id)} tag={Link} to='/'>
+                          <span className="last_time">20</span>
+                        </Button>{' '}
+                        <Button className="last_time_btn" color={`${Mystuff_button_color[4]}`} onClick={() => this.handle_time_button_click(25, posts[post_number].id)} tag={Link} to='/'>
+                          <span className="last_time">25</span>
+                        </Button>{' '}
                     </div>
                     <div className="nextPost">
                       <div onClick={() => this.shift_left(post_number)}>
@@ -124,25 +140,10 @@ class Mystuff extends React.Component {
                         <i className={`fa fa-arrow-right ${right_ok}`}></i>
                       </div>
                     </div>
-                    <span className="not_yet">&nbsp;&nbsp;not yet....</span>
-                    <div className="mystuff_button">
-                        <Button color={`${Mystuff_button_color[0]}`} onClick={() => this.handle_time_button_click(5, posts[post_number].id)} tag={Link} to='/'>
-                          <span className="last_time">&nbsp;5&nbsp;</span>
-                        </Button>{' '}
-                        <Button color={`${Mystuff_button_color[1]}`} onClick={() => this.handle_time_button_click(10, posts[post_number].id)} tag={Link} to='/'>
-                          <span className="last_time">10</span>
-                        </Button>{' '}
-                        <Button color={`${Mystuff_button_color[2]}`} onClick={() => this.handle_time_button_click(15, posts[post_number].id)} tag={Link} to='/'>
-                          <span className="last_time">15</span>
-                        </Button>{' '}
-                        <Button color={`${Mystuff_button_color[3]}`} onClick={() => this.handle_time_button_click(20, posts[post_number].id)} tag={Link} to='/'>
-                          <span className="last_time">20</span>
-                        </Button>{' '}
-                        <Button color={`${Mystuff_button_color[4]}`} onClick={() => this.handle_time_button_click(25, posts[post_number].id)} tag={Link} to='/'>
-                          <span className="last_time">25</span>
-                        </Button>{' '}
-                    </div>
                   </CardBlock>
+                  <div className="done_button">
+                    <Button tag={Link} to='/' color = "info" onClick={() => this.handle_done_button_click(posts[post_number].id)}><span className="done">I'm done</span></Button>
+                  </div>
                 </Card>
               </div>
             )
@@ -150,6 +151,9 @@ class Mystuff extends React.Component {
 
         return (
             <div className='post-list'>
+              <Button className="backbtn" tag={Link} to='/'>
+                <img  className="backIcon" src={require('../resource/back.png')} ></img>
+              </Button>
                 {children}
             </div>
         );

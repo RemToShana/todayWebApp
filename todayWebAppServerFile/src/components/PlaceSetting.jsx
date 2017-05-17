@@ -85,7 +85,7 @@ class PlaceSetting extends React.Component {
 
       return (
           <div>
-            <Button className="backbtn" tag={Link} to='/'>
+            <Button className="backbtn" tag={Link} to='/setting'>
               <img  className="backIcon" src={require('../resource/back.png')} onClick={() => this.handle_place_button_click("home")}></img>
             </Button>
             <div className="card-container">
@@ -99,7 +99,7 @@ class PlaceSetting extends React.Component {
                   &nbsp;&nbsp;
                   Home
                 </div>
-                <Input placeholder="Enter address" getRef={el => {this.input_home = el}} value={home_address} onChange={this.handleHomeInputChange}/>
+                <Input className="placeholderText" placeholder="Enter address" getRef={el => {this.input_home = el}} value={home_address} onChange={this.handleHomeInputChange}/>
                 <div className="place_or_container">
                   <span className="place_or">
                     or
@@ -115,7 +115,7 @@ class PlaceSetting extends React.Component {
                   &nbsp;&nbsp;
                   Office
                 </div>
-                <Input placeholder="Enter address" getRef={el => {this.input_office = el}} value={office_address} onChange={this.handleOfficeInputChange}/>
+                <Input className="placeholderText" placeholder="Enter address" getRef={el => {this.input_office = el}} value={office_address} onChange={this.handleOfficeInputChange}/>
                 <div className="place_or_container">
                   <span className="place_or">
                     or

@@ -78,10 +78,13 @@ class VedioGenres extends React.Component {
       const {genres} = this.props;
       return (
           <div>
+            <Button className="backbtn" tag={Link} to='/setting'>
+              <img  className="backIcon" src={require('../resource/back.png')} onClick={() => this.handle_place_button_click("home")}></img>
+            </Button>
             <div className="card-container">
               <div className="top">
-                <Button tag={Link} to='/setting'>{`<`}</Button>
-                <div className="home_office">Vedio Genres</div>
+
+                <div className="home_office">Video Genres</div>
               </div>
               <ul className="article-list">
                 <li id="TheEllenShow-li" className="circle-li">
@@ -110,9 +113,10 @@ class VedioGenres extends React.Component {
                   </Button>
                 </li>
               </ul>
+
               <div className="place-button">
-                <Button color="info" className="link_button" tag={Link} to='/setting' onClick={() => this.handle_save_genres_click(genres)}>
-                  <span className="button-save">Save</span>
+                <Button color="info" tag={Link} to='/setting' onClick={() => this.handle_save_genres_click(genres)} className="save_button">
+                  <span className="button-save">save</span>
                 </Button>
               </div>
             </div>

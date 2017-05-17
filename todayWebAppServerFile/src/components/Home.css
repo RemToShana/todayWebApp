@@ -4,6 +4,18 @@
   font-family: 'San Francisco', Helvetica, Arial, san-serif;
   font-weight: 100;
 }
+.button > button:hover{
+  transform: scale(1.1);
+}
+.myStuff_button:hover{
+  transform: scale(1.05);
+}
+.video_button:hover{
+  transform: scale(1.05);
+}
+.article_button:hover{
+  transform: scale(1.05);
+}
 .time{
   color: #FD4D3A;
   font-size: 2rem;

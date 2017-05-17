@@ -1,15 +1,24 @@
 .card-container{
   width: 600px;
   margin: 0 auto;
-  height: auto;
+  height: 900px;
 }
 .top-card{
-  height: 100%;
+  margin-top:0%;
+  margin-left:auto;
+  margin-right:auto;
+  background-color: white !important;
+  border-width: 4px!important;
+  border-color: #87C1E5!important;
+  border-radius: 0px!important;
+  height: 80% !important;
+  width:80% !important;
 }
+
 .top-card > a{
   width: 10%;
   font-size: 30px;
-  color: #E8E8E8;
+  color: #2A729F;
 }
 .large_back{
 
@@ -29,42 +38,91 @@
   display: none !important;
 }
 .bigger{
-  font-size: 40px;
+  margin-top: 10px;
+  font-size: 20px;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-weight: 600;
+  color: #2A729F !important;
+  letter-spacing: 0.5px;
 }
 .larger{
-  font-size: 60px;
-  color: white !important;
-  text-align: center;
-}
-.mystuff_deadline{
   font-size: 40px;
   color: #FD4D3A !important;
+  text-align: center;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-weight: 600;
+  margin-top: 40px !important;
+  margin-bottom: 0px !important;
+  letter-spacing: 1px;
+}
+.mystuff_deadline{
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-weight: 100;
+  letter-spacing: 1px;
+  font-size: 20px;
+  text-align: center;
+  margin-top:0px !important;
+  color: #2A729F !important;
 }
 .done_button{
-  margin: 100px auto 50px auto;
+  position: absolute;
+  justify-content: center;
+  margin: 630px 100px 0px -23px;
   text-align: center;
+
+  justify-content: center !important;
 }
 .done_button > a{
-  border-color: white;
-  border-radius: 30px;
-  width: 300px;
+  border-color: #2A729F;
+  border-radius: 5px;
+  background-color: #2A729F !important;
+  width: 478px;
+  height:70px;
+  padding-top: 20px;
+  justify-content: center !important;
 }
 .done{
-  font-size: 40px;
+  padding-top: 10px;
+  font-size: 20px;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-weight: 200;
+  letter-spacing: 1px;
 }
 .not_yet{
   font-size: 20px;
-  color: white !important;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-weight: 200;
+  letter-spacing: 1px;
+  color: #2A729F !important;
+  margin-bottom: 20% !important;
+}
+.notyetContainer{
+  margin-top:100px;
+  margin-bottom: 20px;
 }
 .last_time{
-  color: #FD4D3A;
+  color: #2A729F;
   font-size: 2rem;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-weight: 100;
+}
+.last_time_btn{
+  width:60px;
+  height:60px;
+  border-color: #E2E2E2 !important;
+  border-width: 1px !important;
+  border-radius: 100px !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 1px !important;
+  padding-top:8px!important;
 }
 .nextPost{
   font-size: 3rem;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
+  margin-top:80px;
 }
 .can_shift{
   color: #FD4D3A;
@@ -77,6 +135,36 @@
 }
 .mystuff_button > a{
   border-radius:100%;
-  box-shadow: 0px 2px 1px #888888;
   margin: 1%;
+}
+.cardIcon{
+  width:35px;
+
+}
+.cardTitle{
+  margin-top:5% !important;
+  font-size: 30px;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif;
+  font-weight: 100;
+  color: #2A729F !important;
+  letter-spacing: 1px;
+}
+.fa.fa-arrow-left{
+  color: #87C1E5;
+}
+.fa.fa-arrow-left.cannot_shift{
+  color: white;
+}
+
+.fa.fa-arrow-right{
+  color: #87C1E5;
+}
+.fa.fa-arrow-right.cannot_shift{
+  color: white;
+}
+#bottomCardId{
+  width: 480px;
+  height: 5px;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -34,7 +34,7 @@ class Create extends React.Component {
         super(props);
 
         this.state = {
-          focused: true
+          focused: false
         }
 
         this.inputEl = null;
@@ -85,7 +85,7 @@ class Create extends React.Component {
     }
 
     handle_deadline_button_click(time){
-      this.props.dispatch(setDeadline(time));
+      this.props.dispatch(setDeadline(time.toLocaleDateString('en-US')));
       this.props.dispatch(setDeadlineDanger("is_false"));
       this.props.dispatch(setDeadlineButtonColor(time));
     }
@@ -105,7 +105,7 @@ class Create extends React.Component {
     }
 
     render() {
-        const {has_deadline, link_text, clicked, deadline_button_color ,estimate_button_color, inputValue, placeDanger, timeDanger, deadlineDanger} = this.props;
+        const {deadline, has_deadline, link_text, clicked, deadline_button_color ,estimate_button_color, inputValue, placeDanger, timeDanger, deadlineDanger} = this.props;
         const inputDanger = this.props.inputDanger ? 'has-danger' : '';
         console.log(this.props);
         return (
@@ -157,10 +157,10 @@ class Create extends React.Component {
               <div class="datePickerContainer">
                 <SingleDatePicker
                   date={null} // momentPropTypes.momentObj or null
-                  onDateChange={date => this.handle_deadline_button_click(date)} // PropTypes.func.isRequired
+                  onDateChange={date => this.handle_deadline_button_click(date._d)} // PropTypes.func.isRequired
                   focused={this.state.focused} // PropTypes.bool
                   onFocusChange={({ focused }) => this.setState({ focused })} // PropTypes.func.isRequired
-                  placeholder={"Pick a date"}
+                  placeholder={`${deadline ? deadline: "Pick a date"}`}
                 />
               </div>
 
@@ -170,16 +170,16 @@ class Create extends React.Component {
                 <span className="subtitle">places</span>
                 <div className="place">
                   <div className="verticle-flex">
-                      <img  className="placeIcon" src={require('../resource/home.png')} onClick={() => this.handle_place_button_click("home")}></img>
-                    <span className={`text-center ${clicked[0]}`}>home</span>
+                    <img  className="placeIcon" src={require('../resource/home.png')} onClick={() => this.handle_place_button_click("home")}></img>
+                    <span className={`text-center ${clicked[0]}`} id = "places">home</span>
                   </div>
                   <div className="verticle-flex">
                     <img  className="placeIcon" src={require('../resource/office.png')} onClick={() => this.handle_place_button_click("office")}></img>
-                    <span className={`text-center ${clicked[1]}`}>office</span>
+                    <span className={`text-center ${clicked[1]}`} id = "places">office</span>
                   </div>
                   <div className="verticle-flex">
                     <img  className="placeIcon" src={require('../resource/anywhere.png')} onClick={() => this.handle_place_button_click("anywhere")}></img>
-                    <span className={`text-center ${clicked[2]}`}>anywhere</span>
+                    <span className={`text-center ${clicked[2]}`} id = "places">anywhere</span>
                   </div>
                 </div>
               </div>

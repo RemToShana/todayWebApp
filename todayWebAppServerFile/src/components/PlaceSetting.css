@@ -45,6 +45,8 @@
 }
 .place_or{
   color: gray;
+  letter-spacing: 1px;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif !important;
 }
 .setting-place-container > Input{
   height: 40px;
@@ -76,4 +78,14 @@
   border-width: 2px !important;
   border-color: #BFE4EF !important;
 
+}
+.placeholderText{
+  letter-spacing: 1px;
+  font-family: 'San Francisco', Helvetica, Arial, san-serif !important;
+  font-size: 15px;
+  height: 50px !important;
+  border-color: #D1D1D1 !important;
+  padding-left: 30px !important;
+  border-radius: 5px !important;
+  border-width: 1.5px !important;
 }
